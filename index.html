@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Para Clarice ♡</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400;1,500&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=DM+Sans:wght@300;400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+</head>
+<body>
+
+<!-- Cursor coração -->
+<div class="heart-cursor" id="heartCursor">♡</div>
+
+<!-- Fundo estrelinhas -->
+<div class="bg-ornament" id="bgOrnament"></div>
+
+<!-- Canvas pétalas -->
+<canvas id="petals-canvas"></canvas>
+
+<!-- ════ HERO ════ -->
+<div class="hero">
+  <p class="hero-deco">uma carta de amor</p>
+  <h1 class="hero-title">Para <em>Clarice Bertok</em></h1>
+  <p class="hero-sub">Apenas uma simples forma de dizer que eu amo você.</p>
+  <div class="scroll-hint">
+    <div class="scroll-line"></div>
+    <span>Continue</span>
+  </div>
+</div>
+
+<!-- ════ DECLARAÇÃO ════ -->
+<section id="section-decl">
+  <p class="section-label">a carta</p>
+  <h2 class="section-title">Leia com carinho<br>Isso é para você</h2>
+
+  <div class="envelope-wrapper">
+    <div class="envelope" id="envelope" onclick="openEnvelope()">
+      <div class="envelope-flap"></div>
+      <div class="envelope-left"></div>
+      <div class="envelope-right"></div>
+      <div class="envelope-bottom"></div>
+      <div class="envelope-seal">♡</div>
+      <div class="envelope-hint">clique para abrir</div>
+    </div>
+  </div>
+
+  <div class="letter-card" id="letterCard">
+    <p class="letter-text" id="letterText"></p>
+    <div class="letter-placeholder">
+      ✦ &nbsp; Edite o arquivo e escreva sua declaração aqui &nbsp; ✦<br>
+      <small>Procure por <code>DECLARAÇÃO_AQUI</code> no script.js</small>
+    </div>
+    <p class="letter-sig">Com amor, João ♡</p>
+  </div>
+</section>
+
+<div class="divider">
+  <div class="divider-line"></div>
+  <div class="divider-heart">❀</div>
+  <div class="divider-line"></div>
+</div>
+
+<!-- ════ MÚSICAS ════ -->
+<section id="section-music">
+  <p class="section-label">trilha sonora</p>
+  <h2 class="section-title">As músicas<br>que me fazem<br>pensar em você</h2>
+  <p class="section-body">Cada uma dessas músicas carrega um momento, uma sensação, <em>uma parte de você</em> que ficou em mim.</p>
+  <div class="musics-grid" id="musicsGrid"></div>
+</section>
+
+<div class="divider">
+  <div class="divider-line"></div>
+  <div class="divider-heart">❀</div>
+  <div class="divider-line"></div>
+</div>
+
+<!-- ════ MEMÓRIAS ════ -->
+<section id="section-mem">
+  <p class="section-label">memórias</p>
+  <h2 class="section-title">Momentos<br>que guardo<br>com carinho</h2>
+  <p class="section-body">Cada detalhe que passei ao seu lado ficou guardado. <em>Você faz os momentos valerem.</em></p>
+
+  <div class="polaroids">
+    <div class="polaroid" onclick="openLightbox('imagens/risada.jpg', 'Fazendo nosso melhor: rir juntos')">
+      <div class="polaroid-img">
+        <img src="imagens/risada.jpg" alt="Fazendo nosso melhor: rir juntos">
+      </div>
+      <p class="polaroid-caption">Fazendo nosso melhor: rir juntos</p>
+      <p class="polaroid-hint">clique para ampliar</p>
+    </div>
+    <div class="polaroid" onclick="openLightbox('imagens/pedido.jpg', 'A noite...')">
+      <div class="polaroid-img">
+        <img src="imagens/pedido.jpg" alt="aquela noite especial">
+      </div>
+      <p class="polaroid-caption">A noite...</p>
+      <p class="polaroid-hint">clique para ampliar</p>
+    </div>
+    <div class="polaroid" onclick="openLightbox('imagens/ceu.jpg', 'só nós dois')">
+      <div class="polaroid-img">
+        <img src="imagens/ceu.jpg" alt="só nós dois">
+      </div>
+      <p class="polaroid-caption">Só nós dois</p>
+      <p class="polaroid-hint">clique para ampliar</p>
+    </div>
+    <div class="polaroid" onclick="openLightbox('imagens/candlelight.jpg', 'Aqui você tava deslumbrante')">
+      <div class="polaroid-img">
+        <img src="imagens/candlelight.jpg" alt="Aqui você tava deslumbrante">
+      </div>
+      <p class="polaroid-caption">Aqui você tava deslumbrante</p>
+      <p class="polaroid-hint">clique para ampliar</p>
+    </div>
+  </div>
+</section>
+
+<div class="divider">
+  <div class="divider-line"></div>
+  <div class="divider-heart">❀</div>
+  <div class="divider-line"></div>
+</div>
+
+<!-- ════ CONTADOR ════ -->
+<section id="section-count">
+  <p class="section-label">nosso tempo</p>
+  <h2 class="section-title">Cada dia<br>ao seu lado</h2>
+
+  <div class="counter-box">
+    <div class="counter-numbers">
+      <div class="counter-unit">
+        <div class="counter-num" id="cnt-days">0</div>
+        <div class="counter-label">dias</div>
+      </div>
+      <div class="counter-unit">
+        <div class="counter-num" id="cnt-hours">0</div>
+        <div class="counter-label">horas</div>
+      </div>
+      <div class="counter-unit">
+        <div class="counter-num" id="cnt-min">0</div>
+        <div class="counter-label">minutos</div>
+      </div>
+      <div class="counter-unit">
+        <div class="counter-num" id="cnt-sec">0</div>
+        <div class="counter-label">segundos</div>
+      </div>
+    </div>
+    <p class="counter-date">desde <span id="cnt-since">coloque a data aqui</span></p>
+  </div>
+</section>
+
+<!-- ════ FOOTER ════ -->
+<footer>
+  <div class="footer-heart" id="footerHeart" onclick="heartBurst(event)">♡</div>
+  <p class="footer-text">feito com amor, para Clarice</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
