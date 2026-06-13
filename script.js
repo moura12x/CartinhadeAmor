@@ -4,7 +4,7 @@
 
 // Data de início do relacionamento (Ano, Mês-1, Dia)
 // Exemplo: new Date(2024, 8, 15) = 15 de setembro de 2024
-const START_DATE = new Date(2024, 0, 1); // ← EDITE AQUI
+const START_DATE = new Date(2026, 3, 18); // ← EDITE AQUI
 
 // Músicas — coloque o link do YouTube Music e o nome
 const SONGS = [
