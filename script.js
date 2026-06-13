@@ -21,7 +21,7 @@ const SONGS = [
     note: "Tu és, simplesmente, um sonho pra mim."
   },
   {
-    name: "Tenessee whiskey",
+    name: "Tennessee whiskey",
     artist: "Chris Stapleton",
     url: "https://music.youtube.com/watch?v=l6_w3887Rwo&si=6A16p8xmqgnGoVvu",   // ← EDITE AQUI
     note: "Seus lábios, seu cheiro, seu jeito de ser... São suaves como o Whiskey de tennesse."
